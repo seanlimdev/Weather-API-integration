@@ -1,0 +1,36 @@
+{
+  "root": true,
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
+  "extends": [
+    "next",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    // Allows unused variable names prefixed with underscore, such as: "_unusedVariable"
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_" }
+    ],
+    "@typescript-eslint/ban-types": [
+      "error",
+      { "types": { "{}": false, "Function": false } }
+    ],
+    "prettier/prettier": [
+      "warn",
+      {
+        "printWidth": 120
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
